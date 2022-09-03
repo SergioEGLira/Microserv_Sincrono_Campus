@@ -27,6 +27,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 import apiauthuser.dtos.UserDto;
 import apiauthuser.models.UserModel;
 import apiauthuser.services.UserService;
+import apiauthuser.specifications.SpecificationTemplate;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -37,11 +38,11 @@ public class UserController {
 	UserService userService;
 
 	@GetMapping
-	public ResponseEntity<Page<UserModel>> getAllUsersPaged(
+	public ResponseEntity<Page<UserModel>> getAllUsersPaged(SpecificationTemplate.UserSpec spec,
 						@PageableDefault(page = 0, size = 20, 
 										sort = "userId", direction = Sort.Direction.ASC) 
 										Pageable pageable){
-		Page<UserModel> userModelPage = userService.findAll(pageable);
+		Page<UserModel> userModelPage = userService.findAll(spec, pageable);
 		return ResponseEntity.status(HttpStatus.OK).body(userModelPage);
 	}
 

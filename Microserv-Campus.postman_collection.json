@@ -68,6 +68,21 @@
 									"key": "sort",
 									"value": "username,desc",
 									"disabled": true
+								},
+								{
+									"key": "userType",
+									"value": "STUDENT",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "@meiryjoias.com.br",
+									"disabled": true
+								},
+								{
+									"key": "userStatus",
+									"value": "ACTIVE",
+									"disabled": true
 								}
 							]
 						}
@@ -1125,12 +1140,27 @@
 								},
 								{
 									"key": "size",
-									"value": "3",
+									"value": "2",
 									"disabled": true
 								},
 								{
 									"key": "sort",
 									"value": "username,desc",
+									"disabled": true
+								},
+								{
+									"key": "userType",
+									"value": "STUDENT",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "@meiryjoias.com.br",
+									"disabled": true
+								},
+								{
+									"key": "userStatus",
+									"value": "ACTIVE",
 									"disabled": true
 								}
 							]
