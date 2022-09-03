@@ -195,7 +195,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"cpf\": \"49.407.706-2\",\n  \"email\": \"new@email.com\",\n  \"fullName\": \"New Maria José\",\n  \"imageUrl\": \"https://new image\",\n  \"oldPassword\": \"new oldPassord\",\n  \"password\": \"newPassword\",\n  \"phoneNumber\": \"(11)11111-1111\",\n  \"username\": \"NewMJosé\"\n}",
+							"raw": "{\n  \"cpf\": \"49.407.706-2\",\n  \"email\": \"new@email.com\",\n  \"fullName\": \"New Maria José\",   \n  \"password\": \"newPassword\",\n  \"phoneNumber\": \"(11)11111-1111\",\n  \"username\": \"NewMJosé\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -402,7 +402,7 @@
 					]
 				},
 				{
-					"name": "getOneUser",
+					"name": "getOneUser 2766380e",
 					"event": [
 						{
 							"listen": "test",
@@ -734,7 +734,7 @@
 					]
 				},
 				{
-					"name": "deleteUser",
+					"name": "deleteUser 2766380e",
 					"event": [
 						{
 							"listen": "test",
@@ -1132,7 +1132,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"cpf\": \"49.407.706-2\",\n  \"email\": \"new@email.com\",\n  \"fullName\": \"New Maria José\",\n  \"imageUrl\": \"https://new image\",\n  \"oldPassword\": \"new oldPassord\",\n  \"password\": \"newPassword\",\n  \"phoneNumber\": \"(11)11111-1111\",\n  \"username\": \"NewMJosé\"\n}",
+							"raw": "{\n  \"cpf\": \"49.407.706-2\",\n  \"email\": \"new@email.com\",\n  \"fullName\": \"New Maria José\",\n  \"password\": \"newPassword\",\n  \"phoneNumber\": \"(11)11111-1111\",\n  \"username\": \"NewMJosé\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1372,7 +1372,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"cpf\": \"49.407.706-2\",\n  \"email\": \"new@email.com\",\n  \"fullName\": \"New Maria José\",\n  \"imageUrl\": \"https://new image\",\n  \"oldPassword\": \"new oldPassord\",\n  \"password\": \"newPassword\",\n  \"phoneNumber\": \"(11)11111-1111\",\n  \"username\": \"n n n NewMJosé\"\n}",
+							"raw": "{\n  \"cpf\": \"49.407.706-2\",\n  \"email\": \"new@email.com\",\n  \"fullName\": \"New Maria José\",\n  \"password\": \"newPassword\",\n  \"phoneNumber\": \"(11)11111-1111\",\n  \"username\": \"n n n NewMJosé\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1749,6 +1749,1303 @@
 							},
 							"status": "Forbidden",
 							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Image 7666380e",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"body\", function(){\r",
+									"var responseJson = pm.response.json();\r",
+									"pm.expect(responseJson.imageUrl).to.eql(\"new imageUrl\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"imageUrl\": \"new imageUrl\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/7666380e-204b-48d0-96b4-692f692ca8ad/image",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"7666380e-204b-48d0-96b4-692f692ca8ad",
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Image - erro",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Mensagem\", function(){\r",
+									"console.log(pm.response.text());\r",
+									"pm.expect(pm.response.text()).to.includes(\"User não encontrado.\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"imageUrl\": \"new imageUrl\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/0066380e-204b-48d0-96b4-692f692ca8ad/image",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"0066380e-204b-48d0-96b4-692f692ca8ad",
+								"image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User 7666380e",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"body\", function(){\r",
+									"var responseJson = pm.response.json();\r",
+									"pm.expect(responseJson.cpf).to.eql(\"764.693.489-55\");\r",
+									"pm.expect(responseJson.fullName).to.eql(\"New Maria José\");\r",
+									"pm.expect(responseJson.phoneNumber).to.eql(\"(22)11111-1111\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cpf\": \"764.693.489-55\",\n  \"fullName\": \"New Maria José\",\n  \"phoneNumber\": \"(22)11111-1111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/7666380e-204b-48d0-96b4-692f692ca8ad",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"7666380e-204b-48d0-96b4-692f692ca8ad"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "User - erro",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Mensagem\", function(){\r",
+									"console.log(pm.response.text());\r",
+									"pm.expect(pm.response.text()).to.includes(\"User não encontrado.\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cpf\": \"z49.407.706-2\",\n  \"fullName\": \"New Postman Maria José\",\n  \"phoneNumber\": \"(22)11111-1111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/0066380e-204b-48d0-96b4-692f692ca8ad",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"0066380e-204b-48d0-96b4-692f692ca8ad"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Password User 7666380e",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Mensagem\", function(){\r",
+									"console.log(pm.response.text());\r",
+									"pm.expect(pm.response.text()).to.includes(\"Senha atualizada com sucesso.\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"oldPassword\": \"Password 3\",\n  \"password\": \"new Password 3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/7666380e-204b-48d0-96b4-692f692ca8ad/password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"7666380e-204b-48d0-96b4-692f692ca8ad",
+								"password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Password User - erro",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 409\", function () {\r",
+									"pm.response.to.have.status(409);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Mensagem\", function(){\r",
+									"console.log(pm.response.text());\r",
+									"pm.expect(pm.response.text()).to.includes(\"Erro: Senhas divergentes...\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"oldPassword\": \"new x Password 3\",\n  \"password\": \"new Password 3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/7666380e-204b-48d0-96b4-692f692ca8ad/password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"7666380e-204b-48d0-96b4-692f692ca8ad",
+								"password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Password User - erro",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Mensagem\", function(){\r",
+									"console.log(pm.response.text());\r",
+									"pm.expect(pm.response.text()).to.includes(\"User não encontrado.\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"oldPassword\": \"Password 3\",\n  \"password\": \"new Password 3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/0066380e-204b-48d0-96b4-692f692ca8ad/password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"0066380e-204b-48d0-96b4-692f692ca8ad",
+								"password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"cpf\": \"do veniam\",\n  \"email\": \"sunt nisi\",\n  \"fullName\": \"nisi ipsum Ut\",\n  \"imageUrl\": \"elit ullamco sed ipsum laborum\",\n  \"oldPassword\": \"Excepteur proident\",\n  \"password\": \"Duis esse\",\n  \"phoneNumber\": \"irure sit\",\n  \"username\": \"cu\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/signup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
 							"_postman_previewlanguage": "text",
 							"header": [
 								{

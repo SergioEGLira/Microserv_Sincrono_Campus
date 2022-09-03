@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import apiauthuser.dtos.UserDto;
 import apiauthuser.enums.UserStatus;
 import apiauthuser.enums.UserType;
@@ -28,7 +30,7 @@ public class AuthenticationController {
     UserService userService;
 	
 	@PostMapping("/signup")
-    public ResponseEntity<Object> registerUser(@RequestBody UserDto userDto){
+    public ResponseEntity<Object> registerUser(@RequestBody @JsonView(UserDto.UserView.RegistrationPost.class) UserDto userDto){
         if(userService.existsByUsername(userDto.getUsername())){
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Erro: Username já existe!");
         }
