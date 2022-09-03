@@ -11,7 +11,7 @@
 			"name": "Api-AuthUser",
 			"item": [
 				{
-					"name": "getAllUsers",
+					"name": "getAllUsersPaged",
 					"event": [
 						{
 							"listen": "test",
@@ -23,13 +23,13 @@
 									"\r",
 									"pm.test(\"Total de objetos são 10\", function(){\r",
 									"var responseJson = pm.response.json();\r",
-									"pm.expect(responseJson).length(10);\r",
+									"pm.expect(responseJson.content).length(10);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"creationDate/lastUpdateDate\", function(){\r",
 									"var responseJson = pm.response.json();\r",
-									"pm.expect(responseJson[0].creationDate).to.not.be.null;\r",
-									"pm.expect(responseJson[9].lastUpdateDate).to.not.be.null;\r",
+									"pm.expect(responseJson.content[0].creationDate).to.not.be.null;\r",
+									"pm.expect(responseJson.content[9].lastUpdateDate).to.not.be.null;\r",
 									"});\r",
 									""
 								],
@@ -52,6 +52,23 @@
 							],
 							"path": [
 								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "username,desc",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -1059,7 +1076,7 @@
 					]
 				},
 				{
-					"name": "getAllUsers",
+					"name": "getAllUsersPaged",
 					"event": [
 						{
 							"listen": "test",
@@ -1071,13 +1088,13 @@
 									"\r",
 									"pm.test(\"Total de objetos são 11\", function(){\r",
 									"var responseJson = pm.response.json();\r",
-									"pm.expect(responseJson).length(11);\r",
+									"pm.expect(responseJson.content).length(11);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"creationDate/lastUpdateDate\", function(){\r",
 									"var responseJson = pm.response.json();\r",
-									"pm.expect(responseJson[0].creationDate).to.not.be.null;\r",
-									"pm.expect(responseJson[9].lastUpdateDate).to.not.be.null;\r",
+									"pm.expect(responseJson.content[0].creationDate).to.not.be.null;\r",
+									"pm.expect(responseJson.content[9].lastUpdateDate).to.not.be.null;\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -1099,6 +1116,23 @@
 							],
 							"path": [
 								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "username,desc",
+									"disabled": true
+								}
 							]
 						}
 					},
