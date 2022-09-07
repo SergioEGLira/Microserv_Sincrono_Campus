@@ -46,9 +46,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/users",
+							"raw": "{{api-authuser}}/users",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"users"
@@ -235,9 +235,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/auth/signup",
+							"raw": "{{api-authuser}}/auth/signup",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"auth",
@@ -475,9 +475,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/auth/signup",
+							"raw": "{{api-authuser}}/auth/signup",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"auth",
@@ -715,9 +715,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/auth/signup",
+							"raw": "{{api-authuser}}/auth/signup",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"auth",
@@ -937,9 +937,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/users/2766380e-204b-48d0-96b4-692f692ca8ad",
+							"raw": "{{api-authuser}}/users/2766380e-204b-48d0-96b4-692f692ca8ad",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"users",
@@ -1125,9 +1125,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/users",
+							"raw": "{{api-authuser}}/users",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"users"
@@ -1307,9 +1307,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/users/2766380e-204b-48d0-96b4-692f692ca8ad",
+							"raw": "{{api-authuser}}/users/2766380e-204b-48d0-96b4-692f692ca8ad",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"users",
@@ -1489,9 +1489,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/users/2766380e-204b-48d0-96b4-692f692ca8ad",
+							"raw": "{{api-authuser}}/users/2766380e-204b-48d0-96b4-692f692ca8ad",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"users",
@@ -1684,9 +1684,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/auth/signup",
+							"raw": "{{api-authuser}}/auth/signup",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"auth",
@@ -1924,9 +1924,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/auth/signup",
+							"raw": "{{api-authuser}}/auth/signup",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"auth",
@@ -2152,9 +2152,9 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/users/2766380e-204b-48d0-96b4-692f692ca8ad",
+							"raw": "{{api-authuser}}/users/2766380e-204b-48d0-96b4-692f692ca8ad",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"users",
@@ -2338,9 +2338,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/users/7666380e-204b-48d0-96b4-692f692ca8ad/image",
+							"raw": "{{api-authuser}}/users/7666380e-204b-48d0-96b4-692f692ca8ad/image",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"users",
@@ -2384,9 +2384,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/users/7666380e-204b-48d0-96b4-692f692ca8ad/image",
+							"raw": "{{api-authuser}}/users/7666380e-204b-48d0-96b4-692f692ca8ad/image",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"users",
@@ -2430,9 +2430,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/users/0066380e-204b-48d0-96b4-692f692ca8ad/image",
+							"raw": "{{api-authuser}}/users/0066380e-204b-48d0-96b4-692f692ca8ad/image",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"users",
@@ -2487,9 +2487,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/users/7666380e-204b-48d0-96b4-692f692ca8ad",
+							"raw": "{{api-authuser}}/users/7666380e-204b-48d0-96b4-692f692ca8ad",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"users",
@@ -2727,9 +2727,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/users/0066380e-204b-48d0-96b4-692f692ca8ad",
+							"raw": "{{api-authuser}}/users/0066380e-204b-48d0-96b4-692f692ca8ad",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"users",
@@ -2967,9 +2967,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/users/7666380e-204b-48d0-96b4-692f692ca8ad/password",
+							"raw": "{{api-authuser}}/users/7666380e-204b-48d0-96b4-692f692ca8ad/password",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"users",
@@ -3208,9 +3208,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/users/7666380e-204b-48d0-96b4-692f692ca8ad/password",
+							"raw": "{{api-authuser}}/users/7666380e-204b-48d0-96b4-692f692ca8ad/password",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"users",
@@ -3449,9 +3449,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/users/7666380e-204b-48d0-96b4-692f692ca8ad/password",
+							"raw": "{{api-authuser}}/users/7666380e-204b-48d0-96b4-692f692ca8ad/password",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"users",
@@ -3690,9 +3690,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/users/0066380e-204b-48d0-96b4-692f692ca8ad/password",
+							"raw": "{{api-authuser}}/users/0066380e-204b-48d0-96b4-692f692ca8ad/password",
 							"host": [
-								"{{baseUrl}}"
+								"{{api-authuser}}"
 							],
 							"path": [
 								"users",
@@ -3888,6 +3888,83 @@
 							"body": ""
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "api-course",
+			"item": [
+				{
+					"name": "course UUID- 0016",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Mensagem, delete\", function(){\r",
+									"console.log(pm.response.text());\r",
+									"pm.expect(pm.response.text()).to.includes(\"Deletamos o curso com sucesso!\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api-course}}/courses/0016380e-204b-48d0-96b4-692f692ca8ad",
+							"host": [
+								"{{api-course}}"
+							],
+							"path": [
+								"courses",
+								"0016380e-204b-48d0-96b4-692f692ca8ad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "course - erro",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Mensagem, delete\", function(){\r",
+									"console.log(pm.response.text());\r",
+									"pm.expect(pm.response.text()).to.includes(\"Curso não existe.\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api-course}}/courses/0016380e-204b-48d0-96b4-692f692ca8ad",
+							"host": [
+								"{{api-course}}"
+							],
+							"path": [
+								"courses",
+								"0016380e-204b-48d0-96b4-692f692ca8ad"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
