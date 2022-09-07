@@ -3895,6 +3895,255 @@
 			"name": "api-course",
 			"item": [
 				{
+					"name": "all courses",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Total de objetos são 10\", function(){\r",
+									"var responseJson = pm.response.json();\r",
+									"pm.expect(responseJson).length(10);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Mensagem, delete\", function(){\r",
+									"console.log(pm.response.text());\r",
+									"pm.expect(pm.response.text()).to.includes(\"description 01\");\r",
+									"pm.expect(pm.response.text()).to.includes(\"http://image 03\");\r",
+									"pm.expect(pm.response.text()).to.includes(\"name 07\");\r",
+									"pm.expect(pm.response.text()).to.includes(\"description 10\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"courseLevel\": \"BEGINNER\",\r\n  \"courseStatus\": \"CONCLUDED\",\r\n  \"description\": \"update description 02\",\r\n  \"imageUrl\": \"http://image 02 update\",\r\n  \"name\": \"update name 02\",\r\n  \"userInstructor\": \"0246380e-204b-48d0-96b4-692f692ca8ad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-course}}/courses/getAllCourses",
+							"host": [
+								"{{api-course}}"
+							],
+							"path": [
+								"courses",
+								"getAllCourses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "one course",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Mensagem, delete\", function(){\r",
+									"console.log(pm.response.text());\r",
+									"pm.expect(pm.response.text()).to.includes(\"name 04\");\r",
+									"pm.expect(pm.response.text()).to.includes(\"description 04\");\r",
+									"pm.expect(pm.response.text()).to.includes(\"http://image 04\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"courseLevel\": \"BEGINNER\",\r\n  \"courseStatus\": \"CONCLUDED\",\r\n  \"description\": \"update description 02\",\r\n  \"imageUrl\": \"http://image 02 update\",\r\n  \"name\": \"update name 02\",\r\n  \"userInstructor\": \"0246380e-204b-48d0-96b4-692f692ca8ad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-course}}/courses/getOneCourse/1266380e-204b-48d0-96b4-692f692ca8ad",
+							"host": [
+								"{{api-course}}"
+							],
+							"path": [
+								"courses",
+								"getOneCourse",
+								"1266380e-204b-48d0-96b4-692f692ca8ad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "one course - erro",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Mensagem\", function(){\r",
+									"console.log(pm.response.text());\r",
+									"pm.expect(pm.response.text()).to.includes(\"Curso não encontrado.\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"courseLevel\": \"BEGINNER\",\r\n  \"courseStatus\": \"CONCLUDED\",\r\n  \"description\": \"update description 02\",\r\n  \"imageUrl\": \"http://image 02 update\",\r\n  \"name\": \"update name 02\",\r\n  \"userInstructor\": \"0246380e-204b-48d0-96b4-692f692ca8ad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-course}}/courses/getOneCourse/0266380e-204b-48d0-96b4-692f692ca8ad",
+							"host": [
+								"{{api-course}}"
+							],
+							"path": [
+								"courses",
+								"getOneCourse",
+								"0266380e-204b-48d0-96b4-692f692ca8ad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New course",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Mensagem, delete\", function(){\r",
+									"console.log(pm.response.text());\r",
+									"pm.expect(pm.response.text()).to.includes(\"New name\");\r",
+									"pm.expect(pm.response.text()).to.includes(\"New description\");\r",
+									"pm.expect(pm.response.text()).to.includes(\"http://image new\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"courseLevel\": \"BEGINNER\",\r\n  \"courseStatus\": \"INPROGRESS\",\r\n  \"description\": \"New description\",\r\n  \"imageUrl\": \"http://image new\",\r\n  \"name\": \"New name\",\r\n  \"userInstructor\": \"0236380e-204b-48d0-96b4-692f692ca8ad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-course}}/courses",
+							"host": [
+								"{{api-course}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "course UUID - 1246",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Mensagem, delete\", function(){\r",
+									"console.log(pm.response.text());\r",
+									"pm.expect(pm.response.text()).to.includes(\"update name 02\");\r",
+									"pm.expect(pm.response.text()).to.includes(\"update description 02\");\r",
+									"pm.expect(pm.response.text()).to.includes(\"http://image 02 update\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"courseLevel\": \"BEGINNER\",\r\n  \"courseStatus\": \"CONCLUDED\",\r\n  \"description\": \"update description 02\",\r\n  \"imageUrl\": \"http://image 02 update\",\r\n  \"name\": \"update name 02\",\r\n  \"userInstructor\": \"0246380e-204b-48d0-96b4-692f692ca8ad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api-course}}/courses/1246380e-204b-48d0-96b4-692f692ca8ad",
+							"host": [
+								"{{api-course}}"
+							],
+							"path": [
+								"courses",
+								"1246380e-204b-48d0-96b4-692f692ca8ad"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "course UUID- 0016",
 					"event": [
 						{
