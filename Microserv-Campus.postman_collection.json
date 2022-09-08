@@ -4224,6 +4224,56 @@
 					"name": "module",
 					"item": [
 						{
+							"name": "all modules into course",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"body\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"title 02\");\r",
+											"pm.expect(pm.response.text()).to.includes(\"title 08\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"new description\",\r\n  \"title\": \"new title\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-course}}/courses/1256380e-204b-48d0-96b4-692f692ca8ad/modulesFindAll",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"courses",
+										"1256380e-204b-48d0-96b4-692f692ca8ad",
+										"modulesFindAll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "new module",
 							"event": [
 								{
@@ -4265,6 +4315,207 @@
 										"courses",
 										"1256380e-204b-48d0-96b4-692f692ca8ad",
 										"modules"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "course id-1276 e modulo id-5596",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Mensagem, delete\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"title 06\");\r",
+											"pm.expect(pm.response.text()).to.includes(\"description 06\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"new description\",\r\n  \"title\": \"new title\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-course}}/courses/1276380e-204b-48d0-96b4-692f692ca8ad/modules/5596380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"courses",
+										"1276380e-204b-48d0-96b4-692f692ca8ad",
+										"modules",
+										"5596380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "course id-1276 e modulo id-erro",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Mensagem, delete\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou o curso não existe(m)...\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"new description\",\r\n  \"title\": \"new title\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-course}}/courses/1276380e-204b-48d0-96b4-692f692ca8ad/modules/0000380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"courses",
+										"1276380e-204b-48d0-96b4-692f692ca8ad",
+										"modules",
+										"0000380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "course id-erro e modulo id-erro",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Mensagem, delete\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou o curso não existe(m)...\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"new description\",\r\n  \"title\": \"new title\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-course}}/courses/0000380e-204b-48d0-96b4-692f692ca8ad/modules/0000380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"courses",
+										"0000380e-204b-48d0-96b4-692f692ca8ad",
+										"modules",
+										"0000380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "course id-erro e modulo id-5596",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Mensagem, delete\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou o curso não existe(m)...\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"new description\",\r\n  \"title\": \"new title\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-course}}/courses/0000380e-204b-48d0-96b4-692f692ca8ad/modules/5596380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"courses",
+										"0000380e-204b-48d0-96b4-692f692ca8ad",
+										"modules",
+										"5596380e-204b-48d0-96b4-692f692ca8ad"
 									]
 								}
 							},
@@ -4417,6 +4668,195 @@
 										"0000380e-204b-48d0-96b4-692f692ca8ad",
 										"modules",
 										"5296380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "course id-1296 e modulo id-5896",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Mensagem, delete\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"update title\");\r",
+											"pm.expect(pm.response.text()).to.includes(\"update description\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"update description\",\r\n  \"title\": \"update title\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-course}}/courses/1296380e-204b-48d0-96b4-692f692ca8ad/modules/5896380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"courses",
+										"1296380e-204b-48d0-96b4-692f692ca8ad",
+										"modules",
+										"5896380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "course id-erro e modulo id-erro",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Mensagem, delete\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou o curso não existe(m)...\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"update description\",\r\n  \"title\": \"update title\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-course}}/courses/0000380e-204b-48d0-96b4-692f692ca8ad/modules/0000380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"courses",
+										"0000380e-204b-48d0-96b4-692f692ca8ad",
+										"modules",
+										"0000380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "course id-1296 e modulo id-erro",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Mensagem, delete\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou o curso não existe(m)...\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"update description\",\r\n  \"title\": \"update title\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-course}}/courses/1296380e-204b-48d0-96b4-692f692ca8ad/modules/0000380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"courses",
+										"1296380e-204b-48d0-96b4-692f692ca8ad",
+										"modules",
+										"0000380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "course id-erro e modulo id-5896",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Mensagem, delete\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou o curso não existe(m)...\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"update description\",\r\n  \"title\": \"update title\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-course}}/courses/0000380e-204b-48d0-96b4-692f692ca8ad/modules/5896380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"courses",
+										"0000380e-204b-48d0-96b4-692f692ca8ad",
+										"modules",
+										"5896380e-204b-48d0-96b4-692f692ca8ad"
 									]
 								}
 							},

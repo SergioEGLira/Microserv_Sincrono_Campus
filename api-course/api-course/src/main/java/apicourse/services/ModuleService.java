@@ -1,5 +1,6 @@
 package apicourse.services;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -12,5 +13,7 @@ public interface ModuleService {
 	Optional<ModuleModel> findModuleIntoCourse(UUID courseId, UUID moduleId);
 
 	void delete(ModuleModel moduleModel);
+
+	List<ModuleModel> findAllByCourse(UUID courseId);
 
 }
