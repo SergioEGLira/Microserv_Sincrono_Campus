@@ -2,6 +2,7 @@ package apicourse.controllers;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -13,8 +14,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -57,5 +60,35 @@ public class LessonController {
         }
         lessonService.delete(lessonModelOptional.get());
         return ResponseEntity.status(HttpStatus.OK).body("Lição deletada com sucesso!");
+    }
+
+	@PutMapping("/modules/{moduleId}/updateLesson/{lessonId}")
+    public ResponseEntity<Object> updateLesson(@PathVariable(value="moduleId") UUID moduleId,
+                                               @PathVariable(value="lessonId") UUID lessonId,
+                                               @RequestBody @Valid LessonDto lessonDto){
+        Optional<LessonModel> lessonModelOptional = lessonService.findLessonIntoModule(moduleId, lessonId);
+        if(!lessonModelOptional.isPresent()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("O módulo e/ou a lição não existe(m)...");
+        }
+        var lessonModel = lessonModelOptional.get();
+        lessonModel.setTitle(lessonDto.getTitle());
+        lessonModel.setDescription(lessonDto.getDescription());
+        lessonModel.setVideoUrl(lessonDto.getVideoUrl());
+        return ResponseEntity.status(HttpStatus.OK).body(lessonService.save(lessonModel));
+    }
+
+	@GetMapping("/modules/{moduleId}/allLessons")
+    public ResponseEntity<List<LessonModel>> getAllLessons(@PathVariable(value="moduleId") UUID moduleId){
+        return ResponseEntity.status(HttpStatus.OK).body(lessonService.findAllByModule(moduleId));
+    }
+
+	@GetMapping("/modules/{moduleId}/oneLesson/{lessonId}")
+    public ResponseEntity<Object> getOneLesson(@PathVariable(value="moduleId") UUID moduleId,
+                                               @PathVariable(value="lessonId") UUID lessonId){
+        Optional<LessonModel> lessonModelOptional = lessonService.findLessonIntoModule(moduleId, lessonId);
+        if(!lessonModelOptional.isPresent()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("O módulo e/ou a lição não existe(m)...");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(lessonModelOptional.get());
     }
 }

@@ -5113,6 +5113,393 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "modulo id-5696 e lesson id-9796",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"updated title\");\r",
+											"pm.expect(pm.response.text()).to.includes(\"updated description\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"updated description\",\r\n  \"title\": \"updated title\",\r\n  \"videoUrl\": \"http://video updated\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-course}}/modules/5696380e-204b-48d0-96b4-692f692ca8ad/updateLesson/9796380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"modules",
+										"5696380e-204b-48d0-96b4-692f692ca8ad",
+										"updateLesson",
+										"9796380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "modulo id-erro e lesson id-erro",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou a lição não existe(m)...\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"updated description\",\r\n  \"title\": \"updated title\",\r\n  \"videoUrl\": \"http://video updated\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-course}}/modules/0000380e-204b-48d0-96b4-692f692ca8ad/updateLesson/0000380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"modules",
+										"0000380e-204b-48d0-96b4-692f692ca8ad",
+										"updateLesson",
+										"0000380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "modulo id-erro e lesson id-9796",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou a lição não existe(m)...\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"updated description\",\r\n  \"title\": \"updated title\",\r\n  \"videoUrl\": \"http://video updated\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-course}}/modules/0000380e-204b-48d0-96b4-692f692ca8ad/updateLesson/9796380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"modules",
+										"0000380e-204b-48d0-96b4-692f692ca8ad",
+										"updateLesson",
+										"9796380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "modulo id-5696 e lesson id-erro",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou a lição não existe(m)...\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"updated description\",\r\n  \"title\": \"updated title\",\r\n  \"videoUrl\": \"http://video updated\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-course}}/modules/5696380e-204b-48d0-96b4-692f692ca8ad/updateLesson/0000380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"modules",
+										"5696380e-204b-48d0-96b4-692f692ca8ad",
+										"updateLesson",
+										"0000380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "allLessons",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Total de objetos são 03\", function(){\r",
+											"var responseJson = pm.response.json();\r",
+											"pm.expect(responseJson).length(3);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"pdated title\");\r",
+											"pm.expect(pm.response.text()).to.includes(\"title 03.1\");\r",
+											"pm.expect(pm.response.text()).to.includes(\"description 03.2\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-course}}/modules/5696380e-204b-48d0-96b4-692f692ca8ad/allLessons",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"modules",
+										"5696380e-204b-48d0-96b4-692f692ca8ad",
+										"allLessons"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "modulo id-5123 e lesson id-9226",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"title 10.2\");\r",
+											"pm.expect(pm.response.text()).to.includes(\"description 10.2\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-course}}/modules/5123380e-204b-48d0-96b4-692f692ca8ad/oneLesson/9226380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"modules",
+										"5123380e-204b-48d0-96b4-692f692ca8ad",
+										"oneLesson",
+										"9226380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "modulo id-erro e lesson id-erro",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou a lição não existe(m)...\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-course}}/modules/0000380e-204b-48d0-96b4-692f692ca8ad/oneLesson/0000380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"modules",
+										"0000380e-204b-48d0-96b4-692f692ca8ad",
+										"oneLesson",
+										"0000380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "modulo id-erro e lesson id-9226",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou a lição não existe(m)...\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-course}}/modules/0000380e-204b-48d0-96b4-692f692ca8ad/oneLesson/9226380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"modules",
+										"0000380e-204b-48d0-96b4-692f692ca8ad",
+										"oneLesson",
+										"9226380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "modulo id-5123 e lesson id-erro",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou a lição não existe(m)...\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-course}}/modules/5123380e-204b-48d0-96b4-692f692ca8ad/oneLesson/0000380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"modules",
+										"5123380e-204b-48d0-96b4-692f692ca8ad",
+										"oneLesson",
+										"0000380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}
