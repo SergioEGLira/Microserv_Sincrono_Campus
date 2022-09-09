@@ -444,7 +444,7 @@
 									"pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Mensagem\", function(){\r",
+									"pm.test(\"Body\", function(){\r",
 									"console.log(pm.response.text());\r",
 									"pm.expect(pm.response.text()).to.includes(\"Bad Request\");\r",
 									"});"
@@ -684,7 +684,7 @@
 									"pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Mensagem\", function(){\r",
+									"pm.test(\"Body\", function(){\r",
 									"console.log(pm.response.text());\r",
 									"pm.expect(pm.response.text()).to.includes(\"Bad Request\");\r",
 									"});"
@@ -1288,7 +1288,7 @@
 									"pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Mensagem, delete\", function(){\r",
+									"pm.test(\"Body\", function(){\r",
 									"console.log(pm.response.text());\r",
 									"pm.expect(pm.response.text()).to.includes(\"User deletado com sucesso.\");\r",
 									"});\r",
@@ -1471,7 +1471,7 @@
 									"pm.response.to.have.status(404);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Mensagem\", function(){\r",
+									"pm.test(\"Body\", function(){\r",
 									"console.log(pm.response.text());\r",
 									"pm.expect(pm.response.text()).to.includes(\"User não encontrado...\");\r",
 									"});"
@@ -1653,7 +1653,7 @@
 									"pm.response.to.have.status(409);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Mensagem\", function(){\r",
+									"pm.test(\"Body\", function(){\r",
 									"console.log(pm.response.text());\r",
 									"pm.expect(pm.response.text()).to.includes(\"Erro: Username já existe!\");\r",
 									"});"
@@ -2133,7 +2133,7 @@
 									"pm.response.to.have.status(404);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Mensagem\", function(){\r",
+									"pm.test(\"Body\", function(){\r",
 									"console.log(pm.response.text());\r",
 									"pm.expect(pm.response.text()).to.includes(\"User não encontrado...\");\r",
 									"});\r",
@@ -2316,7 +2316,7 @@
 									"pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"body\", function(){\r",
+									"pm.test(\"Body\", function(){\r",
 									"var responseJson = pm.response.json();\r",
 									"pm.expect(responseJson.imageUrl).to.eql(\"new imageUrl\");\r",
 									"});"
@@ -2362,7 +2362,7 @@
 									"pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Mensagem\", function(){\r",
+									"pm.test(\"Body\", function(){\r",
 									"console.log(pm.response.text());\r",
 									"pm.expect(pm.response.text()).to.includes(\"Bad Request\");\r",
 									"});"
@@ -2408,7 +2408,7 @@
 									"pm.response.to.have.status(404);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Mensagem\", function(){\r",
+									"pm.test(\"Body\", function(){\r",
 									"console.log(pm.response.text());\r",
 									"pm.expect(pm.response.text()).to.includes(\"User não encontrado.\");\r",
 									"});"
@@ -2454,7 +2454,7 @@
 									"pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"body\", function(){\r",
+									"pm.test(\"Body\", function(){\r",
 									"var responseJson = pm.response.json();\r",
 									"pm.expect(responseJson.cpf).to.eql(\"764.693.489-55\");\r",
 									"pm.expect(responseJson.fullName).to.eql(\"New Maria José\");\r",
@@ -2696,7 +2696,7 @@
 									"pm.response.to.have.status(404);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Mensagem\", function(){\r",
+									"pm.test(\"Body\", function(){\r",
 									"console.log(pm.response.text());\r",
 									"pm.expect(pm.response.text()).to.includes(\"User não encontrado.\");\r",
 									"});"
@@ -2936,7 +2936,7 @@
 									"pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Mensagem\", function(){\r",
+									"pm.test(\"Body\", function(){\r",
 									"console.log(pm.response.text());\r",
 									"pm.expect(pm.response.text()).to.includes(\"Senha atualizada com sucesso.\");\r",
 									"});"
@@ -3177,7 +3177,7 @@
 									"pm.response.to.have.status(400);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Mensagem\", function(){\r",
+									"pm.test(\"Body\", function(){\r",
 									"console.log(pm.response.text());\r",
 									"pm.expect(pm.response.text()).to.includes(\"Bad Request\");\r",
 									"});"
@@ -3418,7 +3418,7 @@
 									"pm.response.to.have.status(409);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Mensagem\", function(){\r",
+									"pm.test(\"Body\", function(){\r",
 									"console.log(pm.response.text());\r",
 									"pm.expect(pm.response.text()).to.includes(\"Erro: Senhas divergentes...\");\r",
 									"});"
@@ -3659,7 +3659,7 @@
 									"pm.response.to.have.status(404);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Mensagem\", function(){\r",
+									"pm.test(\"Body\", function(){\r",
 									"console.log(pm.response.text());\r",
 									"pm.expect(pm.response.text()).to.includes(\"User não encontrado.\");\r",
 									"});"
@@ -3913,7 +3913,7 @@
 											"pm.expect(responseJson).length(10);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"description 01\");\r",
 											"pm.expect(pm.response.text()).to.includes(\"http://image 03\");\r",
@@ -3964,7 +3964,7 @@
 											"pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"name 04\");\r",
 											"pm.expect(pm.response.text()).to.includes(\"description 04\");\r",
@@ -4015,7 +4015,7 @@
 											"pm.response.to.have.status(404);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"Curso não encontrado.\");\r",
 											"});"
@@ -4064,7 +4064,7 @@
 											"pm.response.to.have.status(201);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"New name\");\r",
 											"pm.expect(pm.response.text()).to.includes(\"New description\");\r",
@@ -4110,7 +4110,7 @@
 											"pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"update name 02\");\r",
 											"pm.expect(pm.response.text()).to.includes(\"update description 02\");\r",
@@ -4157,7 +4157,7 @@
 											"pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"Deletamos o curso com sucesso!\");\r",
 											"});"
@@ -4193,7 +4193,7 @@
 											"pm.response.to.have.status(404);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"Curso não existe.\");\r",
 											"});"
@@ -4284,7 +4284,7 @@
 											"pm.response.to.have.status(201);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"new title\");\r",
 											"pm.expect(pm.response.text()).to.includes(\"new description\");\r",
@@ -4331,7 +4331,7 @@
 											"pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"title 06\");\r",
 											"pm.expect(pm.response.text()).to.includes(\"description 06\");\r",
@@ -4382,7 +4382,7 @@
 											"pm.response.to.have.status(404);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou o curso não existe(m)...\");\r",
 											"});"
@@ -4432,7 +4432,7 @@
 											"pm.response.to.have.status(404);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou o curso não existe(m)...\");\r",
 											"});"
@@ -4482,7 +4482,7 @@
 											"pm.response.to.have.status(404);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou o curso não existe(m)...\");\r",
 											"});"
@@ -4532,7 +4532,7 @@
 											"pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"Módulo deletado com sucesso.\");\r",
 											"});"
@@ -4570,7 +4570,7 @@
 											"pm.response.to.have.status(404);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou o curso não existe(m)...\");\r",
 											"});"
@@ -4608,7 +4608,7 @@
 											"pm.response.to.have.status(404);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou o curso não existe(m)...\");\r",
 											"});"
@@ -4646,7 +4646,7 @@
 											"pm.response.to.have.status(404);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou o curso não existe(m)...\");\r",
 											"});"
@@ -4684,7 +4684,7 @@
 											"pm.response.to.have.status(200);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"update title\");\r",
 											"pm.expect(pm.response.text()).to.includes(\"update description\");\r",
@@ -4732,7 +4732,7 @@
 											"pm.response.to.have.status(404);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou o curso não existe(m)...\");\r",
 											"});"
@@ -4779,7 +4779,7 @@
 											"pm.response.to.have.status(404);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou o curso não existe(m)...\");\r",
 											"});"
@@ -4826,7 +4826,7 @@
 											"pm.response.to.have.status(404);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Mensagem, delete\", function(){\r",
+											"pm.test(\"Body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou o curso não existe(m)...\");\r",
 											"});"
@@ -4857,6 +4857,258 @@
 										"0000380e-204b-48d0-96b4-692f692ca8ad",
 										"modules",
 										"5896380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Lesson",
+					"item": [
+						{
+							"name": "New Lesson",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"new description\");\r",
+											"pm.expect(pm.response.text()).to.includes(\"new title\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"new description\",\r\n  \"title\": \"new title\",\r\n  \"videoUrl\": \"http://video new\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-course}}/modules/5896380e-204b-48d0-96b4-692f692ca8ad//newLesson",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"modules",
+										"5896380e-204b-48d0-96b4-692f692ca8ad",
+										"",
+										"newLesson"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Lesson - erro",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"Módulo não existe...\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"description\": \"new description\",\r\n  \"title\": \"new title\",\r\n  \"videoUrl\": \"http://video new\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-course}}/modules/0000380e-204b-48d0-96b4-692f692ca8ad//newLesson",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"modules",
+										"0000380e-204b-48d0-96b4-692f692ca8ad",
+										"",
+										"newLesson"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "modulo id-5696 e lesson id-9496",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"Lição deletada com sucesso!\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{api-course}}/modules/5696380e-204b-48d0-96b4-692f692ca8ad/lessons/9496380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"modules",
+										"5696380e-204b-48d0-96b4-692f692ca8ad",
+										"lessons",
+										"9496380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "modulo id-erro e lesson id-erro",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou a lição não existe(m)...\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{api-course}}/modules/0000380e-204b-48d0-96b4-692f692ca8ad/lessons/0000380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"modules",
+										"0000380e-204b-48d0-96b4-692f692ca8ad",
+										"lessons",
+										"0000380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "modulo id-5696 e lesson id-erro",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou a lição não existe(m)...\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{api-course}}/modules/5696380e-204b-48d0-96b4-692f692ca8ad/lessons/0000380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"modules",
+										"5696380e-204b-48d0-96b4-692f692ca8ad",
+										"lessons",
+										"0000380e-204b-48d0-96b4-692f692ca8ad"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "modulo id-erro e lesson id-9496",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body\", function(){\r",
+											"console.log(pm.response.text());\r",
+											"pm.expect(pm.response.text()).to.includes(\"O módulo e/ou a lição não existe(m)...\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{api-course}}/modules/0000380e-204b-48d0-96b4-692f692ca8ad/lessons/9496380e-204b-48d0-96b4-692f692ca8ad",
+									"host": [
+										"{{api-course}}"
+									],
+									"path": [
+										"modules",
+										"0000380e-204b-48d0-96b4-692f692ca8ad",
+										"lessons",
+										"9496380e-204b-48d0-96b4-692f692ca8ad"
 									]
 								}
 							},
