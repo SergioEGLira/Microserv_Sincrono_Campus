@@ -1,8 +1,11 @@
 package apicourse.services;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 
 import apicourse.models.CourseModel;
 
@@ -14,5 +17,5 @@ public interface CourseService {
 
 	Object save(CourseModel courseModel);
 
-	List<CourseModel> findAll();
+	Page<CourseModel> findAll(Specification<CourseModel> spec, Pageable pageable);
 }
