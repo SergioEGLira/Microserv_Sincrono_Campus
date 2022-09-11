@@ -4266,7 +4266,6 @@
 											"pm.test(\"body\", function(){\r",
 											"console.log(pm.response.text());\r",
 											"pm.expect(pm.response.text()).to.includes(\"title 02\");\r",
-											"pm.expect(pm.response.text()).to.includes(\"title 08\");\r",
 											"});"
 										],
 										"type": "text/javascript"
@@ -4289,14 +4288,35 @@
 									}
 								},
 								"url": {
-									"raw": "{{api-course}}/courses/1256380e-204b-48d0-96b4-692f692ca8ad/modulesFindAll",
+									"raw": "{{api-course}}/courses/1256380e-204b-48d0-96b4-692f692ca8ad/modulesFindAllPaged?title=02",
 									"host": [
 										"{{api-course}}"
 									],
 									"path": [
 										"courses",
 										"1256380e-204b-48d0-96b4-692f692ca8ad",
-										"modulesFindAll"
+										"modulesFindAllPaged"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "creationDate,DESC",
+											"disabled": true
+										},
+										{
+											"key": "title",
+											"value": "02"
+										}
 									]
 								}
 							},

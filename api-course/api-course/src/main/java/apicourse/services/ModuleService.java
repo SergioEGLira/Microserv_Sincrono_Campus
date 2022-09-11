@@ -4,6 +4,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
+
 import apicourse.models.ModuleModel;
 
 public interface ModuleService {
@@ -18,4 +22,5 @@ public interface ModuleService {
 
 	Optional<ModuleModel> findById(UUID moduleId);
 
+	Page<ModuleModel> findAllByCourse(Specification<ModuleModel> spec, Pageable pageable);
 }
