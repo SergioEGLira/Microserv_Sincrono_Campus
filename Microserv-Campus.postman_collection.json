@@ -5353,7 +5353,7 @@
 							"response": []
 						},
 						{
-							"name": "allLessons",
+							"name": "allLessonsPaged",
 							"event": [
 								{
 									"listen": "test",
@@ -5365,14 +5365,14 @@
 											"\r",
 											"pm.test(\"Total de objetos são 03\", function(){\r",
 											"var responseJson = pm.response.json();\r",
-											"pm.expect(responseJson).length(3);\r",
+											"pm.expect(responseJson.content).length(3);\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Body\", function(){\r",
-											"console.log(pm.response.text());\r",
-											"pm.expect(pm.response.text()).to.includes(\"pdated title\");\r",
-											"pm.expect(pm.response.text()).to.includes(\"title 03.1\");\r",
-											"pm.expect(pm.response.text()).to.includes(\"description 03.2\");\r",
+											"var responseJson = pm.response.json();\r",
+											"pm.expect(responseJson.content [0].lessonId).to.eql(\"9136380e-204b-48d0-96b4-692f692ca8ad\");\r",
+											"pm.expect(responseJson.content [1].lessonId).to.eql(\"9126380e-204b-48d0-96b4-692f692ca8ad\");\r",
+											"pm.expect(responseJson.content [2].lessonId).to.eql(\"9796380e-204b-48d0-96b4-692f692ca8ad\");\r",
 											"});\r",
 											""
 										],
@@ -5384,14 +5384,35 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{api-course}}/modules/5696380e-204b-48d0-96b4-692f692ca8ad/allLessons",
+									"raw": "{{api-course}}/modules/5696380e-204b-48d0-96b4-692f692ca8ad/allLessonsPaged?sort=creationDate,DESC",
 									"host": [
 										"{{api-course}}"
 									],
 									"path": [
 										"modules",
 										"5696380e-204b-48d0-96b4-692f692ca8ad",
-										"allLessons"
+										"allLessonsPaged"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": "06",
+											"disabled": true
+										},
+										{
+											"key": "sort",
+											"value": "creationDate,DESC"
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "2",
+											"disabled": true
+										}
 									]
 								}
 							},
