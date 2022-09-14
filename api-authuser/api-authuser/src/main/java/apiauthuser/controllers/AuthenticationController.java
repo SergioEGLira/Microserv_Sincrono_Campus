@@ -21,7 +21,9 @@ import apiauthuser.enums.UserStatus;
 import apiauthuser.enums.UserType;
 import apiauthuser.models.UserModel;
 import apiauthuser.services.UserService;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/auth")
@@ -33,10 +35,13 @@ public class AuthenticationController {
 	@PostMapping("/signup")
     public ResponseEntity<Object> registerUser(@RequestBody @Validated(UserDto.UserView.RegistrationPost.class) 
     		@JsonView(UserDto.UserView.RegistrationPost.class) UserDto userDto){
-        if(userService.existsByUsername(userDto.getUsername())){
+		log.debug("POST registerUser userDTO received {} ", userDto.toString());
+		if(userService.existsByUsername(userDto.getUsername())){
+			log.warn("Usuário {} já anteriormente criado...", userDto.getUsername());
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Erro: Username já existe!");
         }
         if(userService.existsByEmail(userDto.getEmail())){
+        	log.warn("Email {} já existe...", userDto.getEmail());
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Erro: Email já existe!");
         }
         
@@ -48,6 +53,8 @@ public class AuthenticationController {
         userModel.setLastUpdateDate(LocalDateTime.now(ZoneId.of("UTC")));
         userService.save(userModel);
         
+        log.debug("POST registerUser userDTO received {} ", userModel.toString());
+        log.info("Usuário {} salvo com sucesso!", userModel.getUserId());
         return  ResponseEntity.status(HttpStatus.CREATED).body(userModel);
 	}
 

@@ -31,7 +31,9 @@ import apiauthuser.dtos.UserDto;
 import apiauthuser.models.UserModel;
 import apiauthuser.services.UserService;
 import apiauthuser.specifications.SpecificationTemplate;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/users")
@@ -66,11 +68,14 @@ public class UserController {
 	
 	@DeleteMapping("/{userId}")
     public ResponseEntity<Object> deleteUser(@PathVariable(value = "userId") UUID userId){
-        Optional<UserModel> userModelOptional = userService.findById(userId);
+		log.debug("DELETE deleteUser userId received {} ", userId);
+		Optional<UserModel> userModelOptional = userService.findById(userId);
         if(!userModelOptional.isPresent()){
             return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("User não encontrado...");
         } else{
             userService.delete(userModelOptional.get());
+            log.debug("DELETE deleteUser userId received {} ", userId);
+            log.info("Usuário {} foi deletado com sucesso!", userId);
             return  ResponseEntity.status(HttpStatus.OK).body("User deletado com sucesso.");
         }
     }
@@ -78,7 +83,8 @@ public class UserController {
 	@PutMapping("/{userId}")
     public ResponseEntity<Object> updateUser(@PathVariable(value = "userId") UUID userId,                                             
     		@RequestBody @Validated(UserDto.UserView.UserPut.class) @JsonView(UserDto.UserView.UserPut.class) UserDto userDto){
-        Optional<UserModel> userModelOptional = userService.findById(userId);
+		log.debug("PUT updateUser userDTO received {} ", userDto.toString());
+		Optional<UserModel> userModelOptional = userService.findById(userId);
         if(!userModelOptional.isPresent()){
             return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("User não encontrado.");
         } else{
@@ -88,6 +94,8 @@ public class UserController {
             userModel.setCpf(userDto.getCpf());
             userModel.setLastUpdateDate(LocalDateTime.now(ZoneId.of("UTC")));
             userService.save(userModel);
+            log.debug("PUT updateUser userModel received {} ", userModel.toString());
+            log.info("Usuário {} atualizado com sucesso!", userModel.getUserId());
             return  ResponseEntity.status(HttpStatus.OK).body(userModel);
         }
     }
@@ -99,7 +107,8 @@ public class UserController {
         if(!userModelOptional.isPresent()){
             return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("User não encontrado.");
         } if(!userModelOptional.get().getPassword().equals(userDto.getOldPassword())){
-            return  ResponseEntity.status(HttpStatus.CONFLICT).body("Erro: Senhas divergentes...");  
+        	log.warn("Erro: Senhas divergentes para o userId {}...", userId);        	
+        	return  ResponseEntity.status(HttpStatus.CONFLICT).body("Erro: Senhas divergentes...");  
         } else{
             var userModel = userModelOptional.get();
             userModel.setPassword(userDto.getPassword());
