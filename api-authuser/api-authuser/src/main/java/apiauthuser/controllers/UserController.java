@@ -94,7 +94,7 @@ public class UserController {
             userModel.setCpf(userDto.getCpf());
             userModel.setLastUpdateDate(LocalDateTime.now(ZoneId.of("UTC")));
             userService.save(userModel);
-            log.debug("PUT updateUser userModel received {} ", userModel.toString());
+            log.debug("PUT updateUser userModel received {} ", userModel.getUserId());
             log.info("Usuário {} atualizado com sucesso!", userModel.getUserId());
             return  ResponseEntity.status(HttpStatus.OK).body(userModel);
         }
