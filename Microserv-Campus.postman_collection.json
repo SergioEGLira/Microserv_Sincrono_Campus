@@ -21,15 +21,15 @@
 									"pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Total de objetos são 10\", function(){\r",
+									"pm.test(\"Total de objetos são 02\", function(){\r",
 									"var responseJson = pm.response.json();\r",
-									"pm.expect(responseJson.content).length(10);\r",
+									"pm.expect(responseJson.content).length(2);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"creationDate/lastUpdateDate\", function(){\r",
 									"var responseJson = pm.response.json();\r",
 									"pm.expect(responseJson.content[0].creationDate).to.not.be.null;\r",
-									"pm.expect(responseJson.content[9].lastUpdateDate).to.not.be.null;\r",
+									"pm.expect(responseJson.content[1].lastUpdateDate).to.not.be.null;\r",
 									"});\r",
 									""
 								],
@@ -46,7 +46,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{api-authuser}}/users",
+							"raw": "{{api-authuser}}/users?courseId=1266380e-204b-48d0-96b4-692f692ca8ad",
 							"host": [
 								"{{api-authuser}}"
 							],
@@ -83,6 +83,10 @@
 									"key": "userStatus",
 									"value": "ACTIVE",
 									"disabled": true
+								},
+								{
+									"key": "courseId",
+									"value": "1266380e-204b-48d0-96b4-692f692ca8ad"
 								}
 							]
 						}
@@ -1101,15 +1105,15 @@
 									"pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Total de objetos são 11\", function(){\r",
+									"pm.test(\"Total de objetos são 01\", function(){\r",
 									"var responseJson = pm.response.json();\r",
-									"pm.expect(responseJson.content).length(11);\r",
+									"pm.expect(responseJson.content).length(1);\r",
 									"});\r",
 									"\r",
 									"pm.test(\"creationDate/lastUpdateDate\", function(){\r",
 									"var responseJson = pm.response.json();\r",
 									"pm.expect(responseJson.content[0].creationDate).to.not.be.null;\r",
-									"pm.expect(responseJson.content[9].lastUpdateDate).to.not.be.null;\r",
+									"pm.expect(responseJson.content[0].lastUpdateDate).to.not.be.null;\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -1125,7 +1129,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{api-authuser}}/users",
+							"raw": "{{api-authuser}}/users?courseId=778445d9-6013-422f-91ef-1e53993f57e7",
 							"host": [
 								"{{api-authuser}}"
 							],
@@ -1162,6 +1166,10 @@
 									"key": "userStatus",
 									"value": "ACTIVE",
 									"disabled": true
+								},
+								{
+									"key": "courseId",
+									"value": "778445d9-6013-422f-91ef-1e53993f57e7"
 								}
 							]
 						}
