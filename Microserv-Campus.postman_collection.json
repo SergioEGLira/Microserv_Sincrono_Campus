@@ -3923,8 +3923,8 @@
 											"\r",
 											"pm.test(\"Body\", function(){\r",
 											"var responseJson = pm.response.json();\r",
-											"pm.expect(responseJson.content [0].courseId).to.eql(\"1116380e-204b-48d0-96b4-692f692ca8ad\");\r",
-											"pm.expect(responseJson.content [1].courseId).to.eql(\"1126380e-204b-48d0-96b4-692f692ca8ad\");\r",
+											"pm.expect(responseJson.content [0].courseId).to.eql(\"1246380e-204b-48d0-96b4-692f692ca8ad\");\r",
+											"pm.expect(responseJson.content [1].courseId).to.eql(\"1266380e-204b-48d0-96b4-692f692ca8ad\");\r",
 											"});"
 										],
 										"type": "text/javascript"
@@ -3947,13 +3947,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{api-course}}/courses/getAllCoursesPaged?name=09",
+									"raw": "{{api-course}}/courses/getAllCoursesPageable?userId=8866380e-204b-48d0-96b4-692f692ca8ad",
 									"host": [
 										"{{api-course}}"
 									],
 									"path": [
 										"courses",
-										"getAllCoursesPaged"
+										"getAllCoursesPageable"
 									],
 									"query": [
 										{
@@ -3983,7 +3983,12 @@
 										},
 										{
 											"key": "name",
-											"value": "09"
+											"value": "09",
+											"disabled": true
+										},
+										{
+											"key": "userId",
+											"value": "8866380e-204b-48d0-96b4-692f692ca8ad"
 										}
 									]
 								}

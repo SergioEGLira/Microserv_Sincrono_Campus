@@ -13,3 +13,4 @@ INSERT INTO tb_users_courses ( id, course_id, user_user_id ) VALUES ( 'abc67af4d
 INSERT INTO tb_users_courses ( id, course_id, user_user_id ) VALUES ( 'abd67af4d1af415ea51c9f7a2ceffdf0', '1266380e204b48d096b4692f692ca8ad', '7666380e204b48d096b4692f692ca8ad');
 INSERT INTO tb_users_courses ( id, course_id, user_user_id ) VALUES ( 'abe67af4d1af415ea51c9f7a2ceffdf0', '1266380e204b48d096b4692f692ca8ad', '8866380e204b48d096b4692f692ca8ad');
 INSERT INTO tb_users_courses ( id, course_id, user_user_id ) VALUES ( 'abf67af4d1af415ea51c9f7a2ceffdf0', '778445d96013422f91ef1e53993f57e7', '7666380e204b48d096b4692f692ca8ad');
+
