@@ -5587,6 +5587,71 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Composition Pattern",
+			"item": [
+				{
+					"name": "All Courses By User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Total de objetos são 02\", function(){\r",
+									"var responseJson = pm.response.json();\r",
+									"pm.expect(responseJson.content).length(2);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body\", function(){\r",
+									"var responseJson = pm.response.json();\r",
+									"pm.expect(responseJson.content [0].courseId).to.eql(\"1246380e-204b-48d0-96b4-692f692ca8ad\");\r",
+									"pm.expect(responseJson.content [1].courseId).to.eql(\"1266380e-204b-48d0-96b4-692f692ca8ad\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api-authuser}}/users/8866380e-204b-48d0-96b4-692f692ca8ad/courses",
+							"host": [
+								"{{api-authuser}}"
+							],
+							"path": [
+								"users",
+								"8866380e-204b-48d0-96b4-692f692ca8ad",
+								"courses"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "name,desc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"variable": [
