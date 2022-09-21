@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
+import apicourse.dtos.CourseUserDto;
 import apicourse.dtos.ResponsePageDto;
 import apicourse.dtos.UserDto;
 import apicourse.services.UtilsService;
@@ -48,6 +49,19 @@ public class AuthUserClient {
         }
         log.info("Ending request /users courseId {} ", courseId);
         return result.getBody();
+    }
+
+    public ResponseEntity<UserDto> getOneUserById(UUID userId){
+        String url = REQUEST_URL_AUTHUSER + "/users/" + userId;
+        return restTemplate.exchange(url, HttpMethod.GET, null, UserDto.class);
+    }
+
+    public void postSubscriptionUserInCourse(UUID courseId, UUID userId) {
+        String url = REQUEST_URL_AUTHUSER + "/users/" + userId + "/courses/subscription";
+        var courseUserDto = new CourseUserDto();
+        courseUserDto.setUserId(userId);
+        courseUserDto.setCourseId(courseId);
+        restTemplate.postForObject(url, courseUserDto, String.class);
     }
 
 }
