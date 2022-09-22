@@ -15,6 +15,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,8 +30,11 @@ import org.springframework.web.bind.annotation.RestController;
 import apicourse.dtos.CourseDto;
 import apicourse.models.CourseModel;
 import apicourse.services.CourseService;
+import apicourse.validation.CourseValidator;
 import apicoursespecifications.SpecificationTemplate;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 @RestController
 @RequestMapping("/courses")
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -38,6 +42,9 @@ public class CourseController {
 	
 	@Autowired
     CourseService courseService;
+	
+	@Autowired
+    CourseValidator courseValidator;
 	
 	@DeleteMapping("/{courseId}")
     public ResponseEntity<Object> deleteCourse(@PathVariable(value="courseId") UUID courseId){
@@ -50,12 +57,20 @@ public class CourseController {
     }
 
 	@PostMapping
-    public ResponseEntity<Object> saveCourse(@RequestBody @Valid CourseDto courseDto){
+    public ResponseEntity<Object> saveCourse(@RequestBody CourseDto courseDto, Errors errors){
+        log.debug("POST saveCourse courseDto received {} ", courseDto.toString());
+        courseValidator.validate(courseDto, errors);
+        if(errors.hasErrors()){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors.getAllErrors());
+        }
         var courseModel = new CourseModel();
         BeanUtils.copyProperties(courseDto, courseModel);
         courseModel.setCreationDate(LocalDateTime.now(ZoneId.of("UTC")));
         courseModel.setLastUpdateDate(LocalDateTime.now(ZoneId.of("UTC")));
-        return ResponseEntity.status(HttpStatus.CREATED).body(courseService.save(courseModel));
+        courseService.save(courseModel);
+        log.debug("POST saveCourse courseId saved {} ", courseModel.getCourseId());
+        log.info("Course saved successfully courseId {} ", courseModel.getCourseId());
+        return ResponseEntity.status(HttpStatus.CREATED).body(courseModel);
     }
 
 	@PutMapping("/{courseId}")
