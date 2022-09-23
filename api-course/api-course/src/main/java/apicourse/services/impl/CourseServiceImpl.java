@@ -13,9 +13,11 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import apicourse.models.CourseModel;
+import apicourse.models.CourseUserModel;
 import apicourse.models.LessonModel;
 import apicourse.models.ModuleModel;
 import apicourse.repositories.CourseRepository;
+import apicourse.repositories.CourseUserRepository;
 import apicourse.repositories.LessonRepository;
 import apicourse.repositories.ModuleRepository;
 import apicourse.services.CourseService;
@@ -32,6 +34,9 @@ public class CourseServiceImpl implements CourseService {
     @Autowired
     LessonRepository lessonRepository;
 	
+    @Autowired
+    CourseUserRepository courseUserRepository;
+    
 	@Transactional
     @Override
     public void delete(CourseModel courseModel) {
@@ -45,6 +50,10 @@ public class CourseServiceImpl implements CourseService {
             }
             moduleRepository.deleteAll(moduleModelList);
         }
+        List<CourseUserModel> courseUserModelList = courseUserRepository.findAllCourseUserIntoCourse(courseModel.getCourseId());
+        if(!courseUserModelList.isEmpty()){
+            courseUserRepository.deleteAll(courseUserModelList);
+        }        
         courseRepository.delete(courseModel);
     }
 
