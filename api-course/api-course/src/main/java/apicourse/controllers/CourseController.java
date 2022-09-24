@@ -7,8 +7,11 @@ import java.util.UUID;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -39,6 +42,11 @@ import lombok.extern.log4j.Log4j2;
 @RequestMapping("/courses")
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class CourseController {
+	
+	private static Logger logger = LoggerFactory.getLogger(CourseController.class);
+
+	@Autowired
+	private Environment env;
 	
 	@Autowired
     CourseService courseService;
@@ -97,6 +105,9 @@ public class CourseController {
     public ResponseEntity<Page<CourseModel>> getAllCoursesPaged(SpecificationTemplate.CourseSpec spec,
     		@PageableDefault(page = 0, size = 20, sort = "courseId", direction = Sort.Direction.ASC) Pageable pageable,
     		@RequestParam(required = false) UUID userId) {
+		
+		logger.info("PORTA UTILIZADA EM NOSSO TESTE DE INSTANCIAS = " + env.getProperty("local.server.port"));
+		
 		if(userId != null){
             return ResponseEntity.status(HttpStatus.OK).body(courseService.findAll(SpecificationTemplate.courseUserId(userId).and(spec), pageable));
         } else {

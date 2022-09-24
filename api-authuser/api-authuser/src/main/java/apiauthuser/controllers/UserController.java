@@ -8,7 +8,10 @@ import java.time.ZoneId;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -40,6 +43,11 @@ import lombok.extern.log4j.Log4j2;
 @RequestMapping("/users")
 public class UserController {
 
+	private static Logger logger = LoggerFactory.getLogger(UserController.class);
+
+	@Autowired
+	private Environment env;
+	
 	@Autowired
 	UserService userService;
 
@@ -49,6 +57,9 @@ public class UserController {
 										sort = "userId", direction = Sort.Direction.ASC) 
 										Pageable pageable,
 										@RequestParam(required = false) UUID courseId){
+		
+		logger.info("PORTA UTILIZADA EM NOSSO TESTE DE INSTANCIAS = " + env.getProperty("local.server.port"));
+		
 		Page<UserModel> userModelPage = null;
 		if(courseId != null) {
 			userModelPage = userService.findAll(SpecificationTemplate.userCourseId(courseId).and(spec), pageable);
