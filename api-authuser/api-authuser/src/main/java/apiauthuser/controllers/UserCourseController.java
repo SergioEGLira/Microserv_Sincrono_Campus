@@ -6,7 +6,6 @@ import java.util.UUID;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -21,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import apiauthuser.clients.CourseClient;
-import apiauthuser.dtos.CourseDto;
 import apiauthuser.dtos.UserCourseDto;
 import apiauthuser.models.UserCourseModel;
 import apiauthuser.models.UserModel;
@@ -40,11 +38,15 @@ public class UserCourseController {
 
     @Autowired
     UserCourseService userCourseService;
-	
+
 	@GetMapping("/users/{userId}/courses")
-    public ResponseEntity<Page<CourseDto>> getAllCoursesByUser(
+    public ResponseEntity<Object> getAllCoursesByUser(
     		@PageableDefault(page = 0, size = 20, sort = "courseId", direction = Sort.Direction.ASC) Pageable pageable,
             @PathVariable(value = "userId") UUID userId){
+		Optional<UserModel> userModelOptional = userService.findById(userId);
+        if(!userModelOptional.isPresent()){
+            return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found.");
+        }
         return ResponseEntity.status(HttpStatus.OK).body(courseClient.getAllCoursesByUser(userId, pageable));
     }
 

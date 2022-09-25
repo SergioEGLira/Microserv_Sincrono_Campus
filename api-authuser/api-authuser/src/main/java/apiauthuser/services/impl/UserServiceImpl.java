@@ -11,6 +11,7 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import apiauthuser.clients.CourseClient;
 import apiauthuser.models.UserCourseModel;
 import apiauthuser.models.UserModel;
 import apiauthuser.repositories.UserCourseRepository;
@@ -26,6 +27,9 @@ public class UserServiceImpl implements UserService {
 	@Autowired
     UserCourseRepository userCourseRepository;
 	
+	@Autowired
+    CourseClient courseClient;
+	
 	@Override
 	public List<UserModel> findAll() {
 		return userRepository.findAll();
@@ -36,14 +40,19 @@ public class UserServiceImpl implements UserService {
 		return userRepository.findById(userId);
 	}
 
-	@Transactional
+	@Transactional 
 	@Override
 	public void delete(UserModel userModel) {
+		boolean deleteUserCourseInCourse = false;
 		List<UserCourseModel> userCourseModelList = userCourseRepository.findAllUserCourseIntoUser(userModel.getUserId());
         if(!userCourseModelList.isEmpty()){
             userCourseRepository.deleteAll(userCourseModelList);
+            deleteUserCourseInCourse = true;
         }
-		userRepository.delete(userModel);
+        userRepository.delete(userModel);
+        if(deleteUserCourseInCourse){
+            courseClient.deleteUserInCourse(userModel.getUserId());
+        }
 	}
 
 	@Override
